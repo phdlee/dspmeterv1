@@ -790,11 +790,27 @@ extern double coeff;
 
 int SWRAdcValue = 0;
 
+//for boot Delay, a alot of data transfer
+//Delay 2.5 Sec
+byte isBooted = 0;
+
 void loop() 
 {
   char isProcess = 0; //0 : Init, 1 : Complete ADC Sampling, 2 : Complete FFT
   isProcess = 0;
+
   ForwardData();
+  if (isBooted < 100)
+  {
+    //Delay 20msec
+    for (int i = 0; i < 20; i++)
+    {
+      ForwardData();
+      delay(1);
+    }
+    isBooted++;
+    return;
+  }
 
   //===========================================
   //TRANSCEIVER STATUS : RX
