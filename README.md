@@ -1,4 +1,10 @@
 # dspmeterv1
+
+Please also refer to the site below.
+https://github.com/soligen2010/dspmeterv1
+
+-------------------------------------------
+
 Standalone Signal Analyzer (I2C Type Signal-Meter) for uBITX - Arduino Nano Version
 
 I do not claim any license for my code.
